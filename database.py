@@ -1,21 +1,22 @@
-
 import mysql.connector
 from mysql.connector import Error
 
 
-def conectar():
-    try:
-        conexion = mysql.connector.connect(
-            host="localhost",
-            user="root",
-            password="",
-            database="crud_compras"
-        )
+class Database:
 
-        if conexion.is_connected():
-            return conexion
+    def conectar(self):
+        try:
+            conexion = mysql.connector.connect(
+                host="localhost",
+                user="root",
+                password="",
+                database="crud_compras"
+            )
 
-    except Error as error:
-        print("Error al conectar con MySQL:", error)
+            if conexion.is_connected():
+                return conexion
 
-    return None
+        except Error as error:
+            print("Error al conectar con MySQL:", error)
+
+        return None
