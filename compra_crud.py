@@ -3,13 +3,25 @@ from compra import Compra
 
 
 class CompraCRUD:
+    """
+    Clase encargada de realizar las operaciones CRUD
+    sobre la tabla compra de la base de datos.
+    """
 
     def __init__(self):
         self.database = Database()
 
     # REGISTRAR COMPRA
     def registrar_compra(self, compra):
+        """
+        Registra una nueva compra en la base de datos.
 
+        Args:
+            compra (Compra): objeto que contiene los datos
+            del producto, cantidad y precio.
+        """
+
+        # Establece la conexión con la base de datos.
         conexion = self.database.conectar()
 
         if conexion is None:
@@ -48,6 +60,13 @@ class CompraCRUD:
 
     # CONSULTAR COMPRAS
     def consultar_compras(self):
+        """
+        Consulta todos los registros existentes en la tabla compra.
+
+        Returns:
+            list: lista de objetos Compra con los datos consultados.
+            []: lista vacía si no existen registros o hay un error.
+        """
 
         conexion = self.database.conectar()
 
@@ -95,6 +114,15 @@ class CompraCRUD:
 
     # ACTUALIZAR COMPRA
     def actualizar_compra(self, id_compra, producto, cantidad, precio):
+        """
+        Actualiza los datos de una compra existente.
+
+        Args:
+            id_compra: identificador de la compra que se actualizará.
+            producto: nuevo nombre del producto.
+            cantidad: nueva cantidad de unidades.
+            precio: nuevo precio unitario.
+        """
 
         conexion = self.database.conectar()
 
@@ -148,6 +176,12 @@ class CompraCRUD:
 
     # ELIMINAR COMPRA
     def eliminar_compra(self, id_compra):
+        """
+        Elimina una compra de la base de datos mediante su ID.
+
+        Args:
+            id_compra: identificador de la compra que se eliminará.
+        """
 
         conexion = self.database.conectar()
 

@@ -4,6 +4,12 @@ from compra_crud import CompraCRUD
 
 
 class Aplicacion:
+    """
+    Clase principal encargada de controlar la aplicación.
+
+    Gestiona el menú, la entrada de datos, las validaciones
+    y la ejecución de las operaciones CRUD.
+    """
 
     def __init__(self):
         self.crud = CompraCRUD()

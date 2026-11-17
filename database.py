@@ -3,8 +3,15 @@ from mysql.connector import Error
 
 
 class Database:
+    """
+    Clase encargada de gestionar la conexión
+    entre la aplicación y la base de datos MySQL.
+    """
 
     def conectar(self):
+        """
+        Establece una conexión con la base de datos.
+        """
         try:
             conexion = mysql.connector.connect(
                 host="localhost",
